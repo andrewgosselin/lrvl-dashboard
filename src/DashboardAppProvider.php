@@ -15,12 +15,13 @@ class DashboardAppProvider extends ServiceProvider
         include __DIR__.'/routes/web.php';
         $this->loadViewsFrom(__DIR__.'/resources/views', 'dashboard');
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+        $this->publishes([__DIR__.'/public' => public_path('vendor/lrvl/dashboard')], 'public');
         View::share('dashboardApp', [
             'name' => 'Dashboard',
             'slug' => 'dashboard',
             'icon' => [
                 "type" => "url",
-                "value" => "/img/home-icon.png"
+                "value" => "/vendor/lrvl/dashboard/icon.png"
             ]
         ]);
     }
