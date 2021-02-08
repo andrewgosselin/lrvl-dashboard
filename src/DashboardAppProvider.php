@@ -17,7 +17,11 @@ class DashboardAppProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
         View::share('dashboardApp', [
             'name' => 'Dashboard',
-            'slug' => 'dashboard'
+            'slug' => 'dashboard',
+            'icon' => [
+                "type" => "url",
+                "value" => "/img/home-icon.png"
+            ]
         ]);
     }
 
